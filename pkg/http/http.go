@@ -183,7 +183,6 @@ func (s *TriggerServer) registerWebhookRoutes(mux *mux.Router) {
 		mux.HandleFunc("/v1/webhooks/dockerhub", s.requireAdminAuthorization(s.dockerHubHandler)).Methods("POST", "OPTIONS")
 		mux.HandleFunc("/v1/webhooks/quay", s.requireAdminAuthorization(s.quayHandler)).Methods("POST", "OPTIONS")
 		mux.HandleFunc("/v1/webhooks/azure", s.requireAdminAuthorization(s.azureHandler)).Methods("POST", "OPTIONS")
-		mux.HandleFunc("/v1/webhooks/github", s.requireAdminAuthorization(s.githubHandler)).Methods("POST", "OPTIONS")
 		mux.HandleFunc("/v1/webhooks/harbor", s.requireAdminAuthorization(s.harborHandler)).Methods("POST", "OPTIONS")
 
 		// Docker registry notifications, used by Docker, Gitlab, Harbor
